@@ -10,6 +10,11 @@ import twitterIcon from '../assets/icons/twitter-icon.png';
 import facebookIcon from '../assets/icons/facebook-icon.png';
 import linkedinIcon from '../assets/icons/linkedin-icon.png';
 
+// Import sentiment face icons
+import happyFaceIcon from '../assets/icons/happy-face-icon.png';
+import neutralFaceIcon from '../assets/icons/neutral-face-icon.png';
+import sadFaceIcon from '../assets/icons/sad-face-icon.png';
+
 // Platform icons mapping
 const platformIcons = {
 	instagram: instagramIcon,
@@ -49,19 +54,31 @@ const SentimentIcons = ({ sentiment }) => {
 	return (
 		<div className="flex items-center space-x-6 text-sm">
 			<div className="flex items-center space-x-2">
-				<span className="text-2xl">😊</span>
+				<img
+					src={happyFaceIcon}
+					alt="Happy"
+					className="w-6 h-6 object-contain"
+				/>
 				<span className="text-gray-700 font-semibold">
 					{sentiment.positive}%
 				</span>
 			</div>
 			<div className="flex items-center space-x-2">
-				<span className="text-2xl">😐</span>
+				<img
+					src={neutralFaceIcon}
+					alt="Neutral"
+					className="w-6 h-6 object-contain"
+				/>
 				<span className="text-gray-700 font-semibold">
 					{sentiment.neutral}%
 				</span>
 			</div>
 			<div className="flex items-center space-x-2">
-				<span className="text-2xl">😞</span>
+				<img
+					src={sadFaceIcon}
+					alt="Sad"
+					className="w-6 h-6 object-contain"
+				/>
 				<span className="text-gray-700 font-semibold">
 					{sentiment.negative}%
 				</span>
