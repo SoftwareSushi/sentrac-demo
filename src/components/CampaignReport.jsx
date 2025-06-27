@@ -25,6 +25,11 @@ import twitterIcon from '../assets/icons/twitter-icon.png';
 import facebookIcon from '../assets/icons/facebook-icon.png';
 import linkedinIcon from '../assets/icons/linkedin-icon.png';
 
+// Import trend icons
+import upTrendIcon from '../assets/icons/up-trend-icon.png';
+import downTrendIcon from '../assets/icons/down-trend-icon.png';
+import equalTrendIcon from '../assets/icons/equal-icon.png';
+
 // Platform icons mapping
 const platformIcons = {
 	instagram: instagramIcon,
@@ -301,11 +306,21 @@ const HashtagAnalysis = ({ hashtags }) => {
 	const getTrendIcon = (trend) => {
 		switch (trend) {
 			case 'up':
-				return '📈';
+				return (
+					<img src={upTrendIcon} alt="up trend" className="w-6 h-6" />
+				);
 			case 'down':
-				return '📉';
+				return (
+					<img src={downTrendIcon} alt="down trend" className="w-6 h-6" />
+				);
 			default:
-				return '➡️';
+				return (
+					<img
+						src={equalTrendIcon}
+						alt="equal trend"
+						className="w-6 h-6"
+					/>
+				);
 		}
 	};
 
