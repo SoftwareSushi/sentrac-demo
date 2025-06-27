@@ -309,31 +309,98 @@ const HashtagAnalysis = ({ hashtags }) => {
 };
 
 const WordCloud = ({ words }) => {
+	// Sort words by value to create better visual hierarchy
+	const sortedWords = [...words].sort((a, b) => b.value - a.value);
+
 	return (
 		<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
 			<h3 className="text-lg font-semibold text-gray-900 mb-4">
 				Top Keywords & Phrases
 			</h3>
-			<div className="flex flex-wrap gap-2 justify-center py-8">
-				{words.map((word, index) => {
-					const fontSize = Math.max(12, Math.min(32, word.value / 3));
-					const color =
-						word.sentiment === 'positive'
-							? 'text-green-600'
-							: word.sentiment === 'negative'
-							? 'text-red-600'
-							: 'text-gray-600';
+			<div className="relative min-h-80 flex flex-wrap items-center justify-center gap-3 py-8 px-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg">
+				{sortedWords.map((word, index) => {
+					// More dynamic font sizing based on value and position
+					const baseFontSize = Math.max(
+						14,
+						Math.min(48, word.value / 2.5)
+					);
+					const fontSize = index < 3 ? baseFontSize * 1.2 : baseFontSize; // Emphasize top 3 words
+
+					// Enhanced color system with more variety
+					const getColor = (sentiment) => {
+						if (sentiment === 'positive') {
+							return index < 5 ? 'text-green-600' : 'text-green-500';
+						} else if (sentiment === 'negative') {
+							return index < 5 ? 'text-red-600' : 'text-red-500';
+						} else {
+							return index < 5 ? 'text-gray-700' : 'text-gray-600';
+						}
+					};
+
+					// Dynamic positioning and styling
+					const isImportant = index < 5;
+					const rotation = ((index % 7) - 3) * 5; // Slight rotation for organic feel
 
 					return (
 						<span
 							key={index}
-							className={`${color} font-medium hover:opacity-70 transition-opacity`}
-							style={{ fontSize: `${fontSize}px` }}
+							className={`
+								${getColor(word.sentiment)} 
+								${isImportant ? 'font-bold' : 'font-semibold'}
+								hover:scale-110 hover:shadow-lg
+								transition-all duration-300 ease-out
+								cursor-pointer
+								inline-block
+								px-2 py-1
+								rounded-md
+								hover:bg-white/60
+								backdrop-blur-sm
+								${index === 0 ? 'animate-pulse' : ''}
+							`}
+							style={{
+								fontSize: `${fontSize}px`,
+								transform: `rotate(${rotation}deg)`,
+								lineHeight: '1.2',
+								margin: `${Math.random() * 8 + 4}px ${
+									Math.random() * 6 + 3
+								}px`,
+								textShadow: isImportant
+									? '0 2px 4px rgba(0,0,0,0.1)'
+									: 'none',
+							}}
+							title={`${word.text} - ${word.value} mentions (${word.sentiment})`}
 						>
 							{word.text}
 						</span>
 					);
 				})}
+
+				{/* Decorative elements for better visual appeal */}
+				<div className="absolute top-4 right-4 opacity-10">
+					<div className="w-16 h-16 bg-blue-200 rounded-full blur-xl"></div>
+				</div>
+				<div className="absolute bottom-4 left-4 opacity-10">
+					<div className="w-12 h-12 bg-green-200 rounded-full blur-lg"></div>
+				</div>
+				<div className="absolute top-1/2 left-1/4 opacity-5">
+					<div className="w-20 h-20 bg-purple-200 rounded-full blur-2xl"></div>
+				</div>
+			</div>
+
+			{/* Legend */}
+			<div className="flex justify-center items-center space-x-6 mt-4 text-sm">
+				<div className="flex items-center space-x-2">
+					<div className="w-3 h-3 bg-green-600 rounded-full"></div>
+					<span className="text-gray-600">Positive</span>
+				</div>
+				<div className="flex items-center space-x-2">
+					<div className="w-3 h-3 bg-gray-600 rounded-full"></div>
+					<span className="text-gray-600">Neutral</span>
+				</div>
+				<div className="flex items-center space-x-2">
+					<div className="w-3 h-3 bg-red-600 rounded-full"></div>
+					<span className="text-gray-600">Negative</span>
+				</div>
 			</div>
 		</div>
 	);
