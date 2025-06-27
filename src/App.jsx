@@ -11,15 +11,24 @@ import './App.css';
 function App() {
 	return (
 		<Router>
-			<div className="min-h-screen bg-gray-50">
-				<header className="bg-white shadow-sm border-b border-gray-200">
+			<div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50">
+				<header className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-white/20 sticky top-0 z-50">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="flex justify-between items-center py-6">
 							<div className="flex items-center">
-								<h1 className="text-2xl font-bold text-gray-900">SenTrac</h1>
-								<span className="ml-2 text-sm text-gray-500">
-									Sentiment Analytics Platform
-								</span>
+								<div className="flex items-center space-x-3">
+									<div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+										<span className="text-white font-bold text-lg">S</span>
+									</div>
+									<div>
+										<h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+											SenTrac
+										</h1>
+										<span className="text-sm text-gray-500 font-medium">
+											Sentiment Analytics Platform
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
