@@ -176,13 +176,23 @@ const Dashboard = () => {
 	return (
 		<div>
 			<div className="mb-8">
-				<h1 className="text-3xl font-bold text-gray-900 mb-2">
-					Campaign Dashboard
-				</h1>
-				<p className="text-gray-600">
-					Monitor your influencer marketing campaigns and sentiment
-					analysis
-				</p>
+				<div className="flex justify-between items-start mb-4">
+					<div>
+						<h1 className="text-3xl font-bold text-gray-900 mb-2">
+							Campaign Dashboard
+						</h1>
+						<p className="text-gray-600">
+							Monitor your influencer marketing campaigns and sentiment
+							analysis
+						</p>
+					</div>
+					<Link
+						to="/create-campaign"
+						className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 font-medium"
+					>
+						Create Campaign
+					</Link>
+				</div>
 			</div>
 
 			<div className="flex flex-col sm:flex-row gap-4 mb-8">

@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import CampaignReport from './components/CampaignReport';
+import CampaignCreation from './components/CampaignCreation';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Dashboard />} />
 						<Route path="/campaign/:id" element={<CampaignReport />} />
+						<Route path="/create-campaign" element={<CampaignCreation />} />
 					</Routes>
 				</main>
 			</div>
