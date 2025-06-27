@@ -410,15 +410,6 @@ export const campaignDetails = {
     }
 };
 
-export const platformIcons = {
-    instagram: "📷",
-    tiktok: "🎵",
-    youtube: "📹",
-    twitter: "🐦",
-    facebook: "📘",
-    linkedin: "💼"
-};
-
 export const sentimentColors = {
     positive: "#10B981", // Green
     neutral: "#6B7280",  // Gray
