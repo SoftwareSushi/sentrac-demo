@@ -1,6 +1,24 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { campaigns, platformIcons } from '../data/dummyData';
+import { campaigns } from '../data/dummyData';
+
+// Import platform icons
+import instagramIcon from '../assets/icons/instagram-icon.png';
+import tiktokIcon from '../assets/icons/tiktok-icon.png';
+import youtubeIcon from '../assets/icons/youtube-icon.png';
+import twitterIcon from '../assets/icons/twitter-icon.png';
+import facebookIcon from '../assets/icons/facebook-icon.png';
+import linkedinIcon from '../assets/icons/linkedin-icon.png';
+
+// Platform icons mapping
+const platformIcons = {
+	instagram: instagramIcon,
+	tiktok: tiktokIcon,
+	youtube: youtubeIcon,
+	twitter: twitterIcon,
+	facebook: facebookIcon,
+	linkedin: linkedinIcon,
+};
 
 const SentimentBar = ({ sentiment }) => {
 	const total =
@@ -74,9 +92,13 @@ const CampaignCard = ({ campaign }) => {
 
 			<div className="flex items-center space-x-2 mb-4">
 				{campaign.platforms.map((platform) => (
-					<span key={platform} className="text-2xl" title={platform}>
-						{platformIcons[platform]}
-					</span>
+					<img
+						key={platform}
+						src={platformIcons[platform]}
+						alt={platform}
+						title={platform}
+						className="w-6 h-6 object-contain"
+					/>
 				))}
 			</div>
 

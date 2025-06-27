@@ -16,6 +16,24 @@ import {
 } from 'recharts';
 import { campaignDetails, sentimentColors } from '../data/dummyData';
 
+// Import platform icons
+import instagramIcon from '../assets/icons/instagram-icon.png';
+import tiktokIcon from '../assets/icons/tiktok-icon.png';
+import youtubeIcon from '../assets/icons/youtube-icon.png';
+import twitterIcon from '../assets/icons/twitter-icon.png';
+import facebookIcon from '../assets/icons/facebook-icon.png';
+import linkedinIcon from '../assets/icons/linkedin-icon.png';
+
+// Platform icons mapping
+const platformIcons = {
+	instagram: instagramIcon,
+	tiktok: tiktokIcon,
+	youtube: youtubeIcon,
+	twitter: twitterIcon,
+	facebook: facebookIcon,
+	linkedin: linkedinIcon,
+};
+
 const MetricCard = ({ title, value, subtitle, color = 'blue' }) => {
 	const colorClasses = {
 		blue: 'bg-blue-50 text-blue-700',
@@ -419,13 +437,13 @@ const CampaignReport = () => {
 					</p>
 					<div className="flex items-center space-x-2 mt-2">
 						{campaign.platforms.map((platform) => (
-							<span key={platform} className="text-2xl" title={platform}>
-								{platform === 'instagram'
-									? '📷'
-									: platform === 'tiktok'
-									? '🎵'
-									: '📹'}
-							</span>
+							<img
+								key={platform}
+								src={platformIcons[platform]}
+								alt={platform}
+								title={platform}
+								className="h-8 w-8"
+							/>
 						))}
 					</div>
 				</div>
