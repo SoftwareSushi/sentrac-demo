@@ -226,8 +226,21 @@ export const campaignDetails = {
         ],
         wordCloudData: [
             { text: "study", value: 60, sentiment: "positive" },
-            { text: "homework", value: 42, sentiment: "neutral" },
-            { text: "exams", value: 30, sentiment: "negative" }
+            { text: "school", value: 50, sentiment: "positive" },
+            { text: "supplies", value: 45, sentiment: "positive" },
+            { text: "backtoschool", value: 40, sentiment: "positive" },
+            { text: "homework", value: 42, sentiment: "negative" },
+            { text: "books", value: 35, sentiment: "neutral" },
+            { text: "classroom", value: 30, sentiment: "neutral" },
+            { text: "teacher", value: 25, sentiment: "neutral" },
+            { text: "learning", value: 20, sentiment: "neutral" },
+            { text: "education", value: 15, sentiment: "neutral" },
+            { text: "schoolsupplies", value: 10, sentiment: "neutral" },
+            { text: "backtoschool", value: 5, sentiment: "neutral" },
+            { text: "exams", value: 30, sentiment: "negative" },
+            { text: "tired", value: 25, sentiment: "negative" },
+            { text: "sleepy", value: 20, sentiment: "negative" },
+            { text: "sleep", value: 15, sentiment: "negative" },
         ],
         audienceInsights: {
             topRegions: [
@@ -304,6 +317,13 @@ export const campaignDetails = {
         ],
         wordCloudData: [
             { text: "gifts", value: 75, sentiment: "positive" },
+            { text: "gift", value: 70, sentiment: "positive" },
+            { text: "money", value: 65, sentiment: "negative" },
+            { text: "giftguide", value: 60, sentiment: "positive" },
+            { text: "christmas", value: 55, sentiment: "positive" },
+            { text: "holiday", value: 50, sentiment: "positive" },
+            { text: "shopping", value: 45, sentiment: "neutral" },
+            { text: "christmas", value: 65, sentiment: "positive" },
             { text: "holiday", value: 65, sentiment: "positive" },
             { text: "shopping", value: 48, sentiment: "neutral" }
         ],
@@ -383,7 +403,11 @@ export const campaignDetails = {
         wordCloudData: [
             { text: "workout", value: 70, sentiment: "positive" },
             { text: "challenge", value: 55, sentiment: "positive" },
-            { text: "tough", value: 35, sentiment: "neutral" }
+            { text: "fitness", value: 50, sentiment: "positive" },
+            { text: "exhausted", value: 45, sentiment: "neutral" },
+            { text: "tough", value: 35, sentiment: "neutral" },
+            { text: "newyear", value: 40, sentiment: "positive" },
+            { text: "newyearnewme", value: 35, sentiment: "positive" }
         ],
         audienceInsights: {
             topRegions: [
