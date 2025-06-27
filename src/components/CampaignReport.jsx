@@ -381,7 +381,7 @@ const AudienceInsights = ({ insights }) => {
 
 const CampaignReport = () => {
 	const { id } = useParams();
-	const campaign = campaignDetails[parseInt(id)];
+	const campaign = campaignDetails[parseInt(id, 10)];
 
 	if (!campaign) {
 		return (
