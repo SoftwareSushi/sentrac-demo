@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState, useMemo } from 'react';
 import {
 	LineChart,
 	Line,
@@ -38,6 +39,147 @@ const platformIcons = {
 	twitter: twitterIcon,
 	facebook: facebookIcon,
 	linkedin: linkedinIcon,
+};
+
+// Utility functions for filtering data based on selected platforms
+const filterDataByPlatforms = (campaign, selectedPlatforms) => {
+	if (
+		selectedPlatforms.length === 0 ||
+		selectedPlatforms.length === campaign.platforms.length
+	) {
+		return campaign; // Return original data if no filter or all platforms selected
+	}
+
+	const platformData = campaign.platformComparison.filter((p) =>
+		selectedPlatforms.some(
+			(selected) => p.platform.toLowerCase() === selected
+		)
+	);
+
+	if (platformData.length === 0) return campaign;
+
+	// Calculate weighted averages based on reach
+	const totalReach = platformData.reduce((sum, p) => sum + p.reach, 0);
+	const totalEngagement = platformData.reduce(
+		(sum, p) => sum + p.engagement * p.reach,
+		0
+	);
+	const totalSentiment = platformData.reduce(
+		(sum, p) => sum + p.sentiment * p.reach,
+		0
+	);
+
+	const avgEngagement = totalEngagement / totalReach;
+	const avgSentiment = totalSentiment / totalReach;
+
+	// Calculate filtered sentiment distribution (approximate)
+	const sentimentMultiplier =
+		avgSentiment / campaign.sentiment.positive;
+	const filteredSentiment = {
+		positive: Math.round(avgSentiment),
+		neutral: Math.round(
+			campaign.sentiment.neutral * sentimentMultiplier
+		),
+		negative: Math.round(
+			100 -
+				avgSentiment -
+				campaign.sentiment.neutral * sentimentMultiplier
+		),
+	};
+
+	return {
+		...campaign,
+		totalReach: totalReach,
+		engagementRate: Number(avgEngagement.toFixed(1)),
+		sentiment: filteredSentiment,
+		platformComparison: platformData,
+		// Scale other metrics proportionally
+		totalViews: Math.round(
+			campaign.totalViews * (totalReach / campaign.totalReach)
+		),
+		completionRate: Math.round(
+			campaign.completionRate * sentimentMultiplier
+		),
+		viralCoefficient: Number(
+			(campaign.viralCoefficient * sentimentMultiplier).toFixed(1)
+		),
+	};
+};
+
+const PlatformFilter = ({
+	campaign,
+	selectedPlatforms,
+	onPlatformChange,
+}) => {
+	const togglePlatform = (platform) => {
+		if (selectedPlatforms.includes(platform)) {
+			onPlatformChange(selectedPlatforms.filter((p) => p !== platform));
+		} else {
+			onPlatformChange([...selectedPlatforms, platform]);
+		}
+	};
+
+	const selectAll = () => {
+		onPlatformChange([...campaign.platforms]);
+	};
+
+	const clearAll = () => {
+		onPlatformChange([]);
+	};
+
+	return (
+		<div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 mb-8">
+			<div className="flex items-center justify-between mb-4">
+				<h3 className="text-lg font-bold text-gray-900">
+					Filter by Platform
+				</h3>
+				<div className="flex space-x-2">
+					<button
+						onClick={selectAll}
+						className="px-3 py-1 text-xs font-medium text-purple-600 hover:text-purple-700 border border-purple-200 rounded-lg hover:bg-purple-50 transition-colors duration-200"
+					>
+						Select All
+					</button>
+					<button
+						onClick={clearAll}
+						className="px-3 py-1 text-xs font-medium text-gray-600 hover:text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+					>
+						Clear All
+					</button>
+				</div>
+			</div>
+			<div className="flex flex-wrap gap-3">
+				{campaign.platforms.map((platform) => {
+					const isSelected = selectedPlatforms.includes(platform);
+					return (
+						<button
+							key={platform}
+							onClick={() => togglePlatform(platform)}
+							className={`flex items-center space-x-2 px-4 py-2 rounded-xl border-2 transition-all duration-200 ${
+								isSelected
+									? 'border-purple-500 bg-purple-50 text-purple-700 shadow-md'
+									: 'border-gray-200 bg-white text-gray-600 hover:border-purple-300 hover:bg-purple-25'
+							}`}
+						>
+							<img
+								src={platformIcons[platform]}
+								alt={platform}
+								className="h-5 w-5"
+							/>
+							<span className="font-medium capitalize">{platform}</span>
+						</button>
+					);
+				})}
+			</div>
+			{selectedPlatforms.length > 0 &&
+				selectedPlatforms.length < campaign.platforms.length && (
+					<div className="mt-3 text-sm text-gray-600 bg-blue-50 px-3 py-2 rounded-lg">
+						Showing data for {selectedPlatforms.length} of{' '}
+						{campaign.platforms.length} platforms
+					</div>
+				)}
+		</div>
+	);
 };
 
 const MetricCard = ({ title, value, subtitle, color = 'purple' }) => {
@@ -481,6 +623,12 @@ const AudienceInsights = ({ insights }) => {
 const CampaignReport = () => {
 	const { id } = useParams();
 	const campaign = campaignDetails[parseInt(id, 10)];
+	const [selectedPlatforms, setSelectedPlatforms] = useState([]);
+
+	const filteredCampaign = useMemo(() => {
+		if (!campaign) return null;
+		return filterDataByPlatforms(campaign, selectedPlatforms);
+	}, [campaign, selectedPlatforms]);
 
 	if (!campaign) {
 		return (
@@ -521,50 +669,42 @@ const CampaignReport = () => {
 						{new Date(campaign.startDate).toLocaleDateString()} -{' '}
 						{new Date(campaign.endDate).toLocaleDateString()}
 					</p>
-					<div className="flex items-center space-x-3">
-						{campaign.platforms.map((platform) => (
-							<div
-								key={platform}
-								className="p-2 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-white/20 hover:shadow-lg transition-all duration-200"
-							>
-								<img
-									src={platformIcons[platform]}
-									alt={platform}
-									title={platform}
-									className="h-8 w-8"
-								/>
-							</div>
-						))}
-					</div>
 				</div>
 				<button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
 					Download Report
 				</button>
 			</div>
 
+			{/* Platform Filter */}
+			<PlatformFilter
+				campaign={campaign}
+				selectedPlatforms={selectedPlatforms}
+				onPlatformChange={setSelectedPlatforms}
+			/>
+
 			{/* Key Metrics */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				<MetricCard
 					title="Engagement Rate"
-					value={`${campaign.engagementRate}%`}
+					value={`${filteredCampaign.engagementRate}%`}
 					subtitle="Campaign average"
 					color="green"
 				/>
 				<MetricCard
 					title="Total Reach"
-					value={campaign.totalReach.toLocaleString()}
+					value={filteredCampaign.totalReach.toLocaleString()}
 					subtitle="Unique users reached"
 					color="blue"
 				/>
 				<MetricCard
 					title="Completion Rate"
-					value={`${campaign.completionRate}%`}
+					value={`${filteredCampaign.completionRate}%`}
 					subtitle="Video completion rate"
 					color="purple"
 				/>
 				<MetricCard
 					title="Viral Coefficient"
-					value={campaign.viralCoefficient}
+					value={filteredCampaign.viralCoefficient}
 					subtitle="Shares per view"
 					color="orange"
 				/>
@@ -572,27 +712,31 @@ const CampaignReport = () => {
 
 			{/* Sentiment Analysis */}
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-				<SentimentPieChart sentiment={campaign.sentiment} />
-				<SentimentOverTimeChart data={campaign.sentimentOverTime} />
+				<SentimentPieChart sentiment={filteredCampaign.sentiment} />
+				<SentimentOverTimeChart
+					data={filteredCampaign.sentimentOverTime}
+				/>
 			</div>
 
 			{/* Word Cloud */}
-			<WordCloud words={campaign.wordCloudData} />
+			<WordCloud words={filteredCampaign.wordCloudData} />
 
 			{/* Performance Metrics */}
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-				<ContentTypeChart data={campaign.contentTypes} />
-				<PlatformComparisonChart data={campaign.platformComparison} />
+				<ContentTypeChart data={filteredCampaign.contentTypes} />
+				<PlatformComparisonChart
+					data={filteredCampaign.platformComparison}
+				/>
 			</div>
 
 			{/* Influencer Performance */}
-			<InfluencerTable influencers={campaign.influencers} />
+			<InfluencerTable influencers={filteredCampaign.influencers} />
 
 			{/* Hashtag Analysis */}
-			<HashtagAnalysis hashtags={campaign.hashtags} />
+			<HashtagAnalysis hashtags={filteredCampaign.hashtags} />
 
 			{/* Audience Insights */}
-			<AudienceInsights insights={campaign.audienceInsights} />
+			<AudienceInsights insights={filteredCampaign.audienceInsights} />
 		</div>
 	);
 };
