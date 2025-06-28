@@ -522,7 +522,7 @@ export const campaignDetails = {
                 shares: 678,
                 views: 156800,
                 sentiment: "positive",
-                previewImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
+                previewImage: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 14,
@@ -535,7 +535,7 @@ export const campaignDetails = {
                 shares: 123,
                 views: 42300,
                 sentiment: "positive",
-                previewImage: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
+                previewImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 15,
@@ -548,7 +548,7 @@ export const campaignDetails = {
                 shares: 234,
                 views: 67800,
                 sentiment: "positive",
-                previewImage: "https://images.unsplash.com/photo-1512389098783-66b81f86e199?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
+                previewImage: "https://images.unsplash.com/photo-1512389098783-66b81f86e199?auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 16,
@@ -561,7 +561,7 @@ export const campaignDetails = {
                 shares: 89,
                 views: 32100,
                 sentiment: "neutral",
-                previewImage: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
+                previewImage: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=400&h=400"
             }
         ]
     },
