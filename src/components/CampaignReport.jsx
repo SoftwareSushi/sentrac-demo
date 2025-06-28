@@ -17,6 +17,7 @@ import {
 } from 'recharts';
 import { campaignDetails, sentimentColors } from '../data/dummyData';
 import { TagCloud } from 'react-tagcloud';
+import { generateCampaignPDF } from '../utils/pdfGenerator';
 
 // Import platform icons
 import instagramIcon from '../assets/icons/instagram-icon.png';
@@ -630,6 +631,10 @@ const CampaignReport = () => {
 		return filterDataByPlatforms(campaign, selectedPlatforms);
 	}, [campaign, selectedPlatforms]);
 
+	const handleDownloadPDF = () => {
+		generateCampaignPDF(filteredCampaign);
+	};
+
 	if (!campaign) {
 		return (
 			<div className="text-center py-20">
@@ -670,7 +675,10 @@ const CampaignReport = () => {
 						{new Date(campaign.endDate).toLocaleDateString()}
 					</p>
 				</div>
-				<button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+				<button
+					onClick={handleDownloadPDF}
+					className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+				>
 					Download Report
 				</button>
 			</div>
