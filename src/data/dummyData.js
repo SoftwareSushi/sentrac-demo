@@ -318,14 +318,15 @@ export const campaignDetails = {
         wordCloudData: [
             { text: "gifts", value: 75, sentiment: "positive" },
             { text: "gift", value: 70, sentiment: "positive" },
-            { text: "money", value: 65, sentiment: "negative" },
-            { text: "giftguide", value: 60, sentiment: "positive" },
-            { text: "christmas", value: 55, sentiment: "positive" },
-            { text: "holiday", value: 50, sentiment: "positive" },
-            { text: "shopping", value: 45, sentiment: "neutral" },
             { text: "christmas", value: 65, sentiment: "positive" },
-            { text: "holiday", value: 65, sentiment: "positive" },
-            { text: "shopping", value: 48, sentiment: "neutral" }
+            { text: "holiday", value: 60, sentiment: "positive" },
+            { text: "giftguide", value: 60, sentiment: "positive" },
+            { text: "shopping", value: 55, sentiment: "neutral" },
+            { text: "deals", value: 50, sentiment: "positive" },
+            { text: "festive", value: 45, sentiment: "positive" },
+            { text: "family", value: 40, sentiment: "positive" },
+            { text: "expensive", value: 35, sentiment: "negative" },
+            { text: "crowded", value: 25, sentiment: "negative" }
         ],
         audienceInsights: {
             topRegions: [

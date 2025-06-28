@@ -625,14 +625,23 @@ const CampaignReport = () => {
 	const { id } = useParams();
 	const campaign = campaignDetails[parseInt(id, 10)];
 	const [selectedPlatforms, setSelectedPlatforms] = useState([]);
+	const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
 	const filteredCampaign = useMemo(() => {
 		if (!campaign) return null;
 		return filterDataByPlatforms(campaign, selectedPlatforms);
 	}, [campaign, selectedPlatforms]);
 
-	const handleDownloadPDF = () => {
-		generateCampaignPDF(filteredCampaign);
+	const handleDownloadPDF = async () => {
+		try {
+			setIsGeneratingPDF(true);
+			await generateCampaignPDF(filteredCampaign);
+		} catch (error) {
+			console.error('Error generating PDF:', error);
+			// You could add user-friendly error handling here
+		} finally {
+			setIsGeneratingPDF(false);
+		}
 	};
 
 	if (!campaign) {
@@ -677,9 +686,14 @@ const CampaignReport = () => {
 				</div>
 				<button
 					onClick={handleDownloadPDF}
-					className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+					disabled={isGeneratingPDF}
+					className={`px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg ${
+						isGeneratingPDF
+							? 'opacity-70 cursor-not-allowed'
+							: 'hover:from-purple-700 hover:to-pink-700 hover:shadow-xl hover:-translate-y-0.5'
+					}`}
 				>
-					Download Report
+					{isGeneratingPDF ? 'Generating PDF...' : 'Download Report'}
 				</button>
 			</div>
 
