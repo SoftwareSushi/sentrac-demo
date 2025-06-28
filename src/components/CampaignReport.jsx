@@ -18,6 +18,7 @@ import {
 import { campaignDetails, sentimentColors } from '../data/dummyData';
 import { TagCloud } from 'react-tagcloud';
 import { generateCampaignPDF } from '../utils/pdfGenerator';
+import CampaignPosts from './CampaignPosts';
 
 // Import platform icons
 import instagramIcon from '../assets/icons/instagram-icon.png';
@@ -742,6 +743,12 @@ const CampaignReport = () => {
 
 			{/* Word Cloud */}
 			<WordCloud words={filteredCampaign.wordCloudData} />
+
+			{/* Posts in Campaign */}
+			<CampaignPosts
+				posts={filteredCampaign.posts}
+				selectedPlatforms={selectedPlatforms}
+			/>
 
 			{/* Performance Metrics */}
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

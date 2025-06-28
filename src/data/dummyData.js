@@ -164,7 +164,113 @@ export const campaignDetails = {
                     { gender: "Other", percentage: 2, sentiment: 78 }
                 ]
             }
-        }
+        },
+        posts: [
+            {
+                id: 1,
+                platform: "instagram",
+                creator: "@sarahjfit",
+                contentType: "Reel",
+                url: "https://instagram.com/p/summer-vibes-1",
+                likes: 15420,
+                comments: 312,
+                shares: 89,
+                views: 45600,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/FFE4E1/FF69B4?text=Summer+Vibes"
+            },
+            {
+                id: 2,
+                platform: "tiktok",
+                creator: "@mikechenofficial",
+                contentType: "Video",
+                url: "https://tiktok.com/@mikechenofficial/video/7123456789",
+                likes: 28750,
+                comments: 892,
+                shares: 456,
+                views: 125400,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/E6F3FF/3B82F6?text=TikTok+Video"
+            },
+            {
+                id: 3,
+                platform: "youtube",
+                creator: "@emmastyle",
+                contentType: "Video",
+                url: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+                likes: 8965,
+                comments: 543,
+                shares: 234,
+                views: 67800,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/FFE4E1/FF6B6B?text=YouTube+Video"
+            },
+            {
+                id: 4,
+                platform: "instagram",
+                creator: "@alexfitness",
+                contentType: "Image",
+                url: "https://instagram.com/p/summer-workout-4",
+                likes: 12300,
+                comments: 187,
+                shares: 45,
+                views: 23400,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/F0FFF0/32CD32?text=Workout+Post"
+            },
+            {
+                id: 5,
+                platform: "tiktok",
+                creator: "@sarahjfit",
+                contentType: "Video",
+                url: "https://tiktok.com/@sarahjfit/video/7123456790",
+                likes: 19800,
+                comments: 432,
+                shares: 298,
+                views: 89600,
+                sentiment: "neutral",
+                previewImage: "https://via.placeholder.com/300x300/F5F5DC/D2691E?text=Neutral+Content"
+            },
+            {
+                id: 6,
+                platform: "instagram",
+                creator: "@emmastyle",
+                contentType: "Story",
+                url: "https://instagram.com/stories/emmastyle/123456789",
+                likes: 5600,
+                comments: 89,
+                shares: 23,
+                views: 12800,
+                sentiment: "negative",
+                previewImage: "https://via.placeholder.com/300x300/FFE4E4/DC143C?text=Story+Content"
+            },
+            {
+                id: 7,
+                platform: "youtube",
+                creator: "@mikechenofficial",
+                contentType: "Video",
+                url: "https://youtube.com/watch?v=abc123def456",
+                likes: 11200,
+                comments: 678,
+                shares: 189,
+                views: 45300,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/E0E6FF/4169E1?text=Style+Tutorial"
+            },
+            {
+                id: 8,
+                platform: "instagram",
+                creator: "@alexfitness",
+                contentType: "Carousel",
+                url: "https://instagram.com/p/summer-collection-8",
+                likes: 9870,
+                comments: 234,
+                shares: 67,
+                views: 18900,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/F0FFFF/4682B4?text=Carousel+Post"
+            }
+        ]
     },
     2: {
         ...campaigns[1],
@@ -263,7 +369,61 @@ export const campaignDetails = {
                     { gender: "Other", percentage: 2, sentiment: 62 }
                 ]
             }
-        }
+        },
+        posts: [
+            {
+                id: 9,
+                platform: "instagram",
+                creator: "@liamschooltips",
+                contentType: "Reel",
+                url: "https://instagram.com/p/back-to-school-1",
+                likes: 8900,
+                comments: 156,
+                shares: 34,
+                views: 23400,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/FFF8DC/FFD700?text=School+Tips"
+            },
+            {
+                id: 10,
+                platform: "youtube",
+                creator: "@oliviareads",
+                contentType: "Video",
+                url: "https://youtube.com/watch?v=study-tips-123",
+                likes: 6750,
+                comments: 289,
+                shares: 78,
+                views: 34500,
+                sentiment: "neutral",
+                previewImage: "https://via.placeholder.com/300x300/F0F8FF/4169E1?text=Study+Guide"
+            },
+            {
+                id: 11,
+                platform: "twitter",
+                creator: "@noahscience",
+                contentType: "Post",
+                url: "https://twitter.com/noahscience/status/123456789",
+                likes: 2340,
+                comments: 89,
+                shares: 156,
+                views: 8900,
+                sentiment: "neutral",
+                previewImage: "https://via.placeholder.com/300x300/E6F3FF/1DA1F2?text=Science+Tweet"
+            },
+            {
+                id: 12,
+                platform: "instagram",
+                creator: "@oliviareads",
+                contentType: "Story",
+                url: "https://instagram.com/stories/oliviareads/234567890",
+                likes: 4560,
+                comments: 67,
+                shares: 23,
+                views: 11200,
+                sentiment: "negative",
+                previewImage: "https://via.placeholder.com/300x300/FFE4E4/DC143C?text=Book+Review"
+            }
+        ]
     },
     3: {
         ...campaigns[2],
@@ -349,7 +509,61 @@ export const campaignDetails = {
                     { gender: "Other", percentage: 2, sentiment: 80 }
                 ]
             }
-        }
+        },
+        posts: [
+            {
+                id: 13,
+                platform: "tiktok",
+                creator: "@sofiab",
+                contentType: "Video",
+                url: "https://tiktok.com/@sofiab/video/7123456791",
+                likes: 35600,
+                comments: 1240,
+                shares: 678,
+                views: 156800,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/FFE4CC/FF8C00?text=Gift+Guide"
+            },
+            {
+                id: 14,
+                platform: "instagram",
+                creator: "@danieltalks",
+                contentType: "Carousel",
+                url: "https://instagram.com/p/holiday-gifts-14",
+                likes: 18900,
+                comments: 456,
+                shares: 123,
+                views: 42300,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/F0FFF0/228B22?text=Holiday+Haul"
+            },
+            {
+                id: 15,
+                platform: "youtube",
+                creator: "@sofiab",
+                contentType: "Video",
+                url: "https://youtube.com/watch?v=holiday-shopping-tips",
+                likes: 12400,
+                comments: 789,
+                shares: 234,
+                views: 67800,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/FFE4E6/FF1493?text=Shopping+Tips"
+            },
+            {
+                id: 16,
+                platform: "instagram",
+                creator: "@danieltalks",
+                contentType: "Reel",
+                url: "https://instagram.com/p/christmas-deals-16",
+                likes: 14500,
+                comments: 234,
+                shares: 89,
+                views: 32100,
+                sentiment: "neutral",
+                previewImage: "https://via.placeholder.com/300x300/F5F5DC/CD853F?text=Christmas+Deals"
+            }
+        ]
     },
     4: {
         ...campaigns[3],
@@ -431,7 +645,61 @@ export const campaignDetails = {
                     { gender: "Other", percentage: 2, sentiment: 69 }
                 ]
             }
-        }
+        },
+        posts: [
+            {
+                id: 17,
+                platform: "youtube",
+                creator: "@gracefitness",
+                contentType: "Video",
+                url: "https://youtube.com/watch?v=new-year-workout",
+                likes: 9800,
+                comments: 345,
+                shares: 156,
+                views: 45600,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/F0FFFF/00CED1?text=Workout+Video"
+            },
+            {
+                id: 18,
+                platform: "instagram",
+                creator: "@ethanworkout",
+                contentType: "Reel",
+                url: "https://instagram.com/p/fitness-challenge-18",
+                likes: 11200,
+                comments: 189,
+                shares: 67,
+                views: 28900,
+                sentiment: "positive",
+                previewImage: "https://via.placeholder.com/300x300/E6FFE6/32CD32?text=Fitness+Reel"
+            },
+            {
+                id: 19,
+                platform: "tiktok",
+                creator: "@gracefitness",
+                contentType: "Video",
+                url: "https://tiktok.com/@gracefitness/video/7123456792",
+                likes: 23400,
+                comments: 567,
+                shares: 234,
+                views: 78900,
+                sentiment: "neutral",
+                previewImage: "https://via.placeholder.com/300x300/FFF8DC/DAA520?text=Challenge+Tips"
+            },
+            {
+                id: 20,
+                platform: "instagram",
+                creator: "@ethanworkout",
+                contentType: "Image",
+                url: "https://instagram.com/p/motivation-monday-20",
+                likes: 7800,
+                comments: 123,
+                shares: 34,
+                views: 16700,
+                sentiment: "negative",
+                previewImage: "https://via.placeholder.com/300x300/FFE4E4/DC143C?text=Motivation+Post"
+            }
+        ]
     }
 };
 
