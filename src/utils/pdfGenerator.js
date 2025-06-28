@@ -110,14 +110,14 @@ export const generateCampaignPDF = async (campaign) => {
                     responsive: false,
                     plugins: {
                         legend: {
-                            position: chartType === 'pie' ? 'right' : 'top',
+                            position: (chartType === 'pie' || chartType === 'doughnut') ? 'right' : 'top',
                             labels: {
                                 boxWidth: 12,
                                 fontSize: 10
                             }
                         }
                     },
-                    scales: chartType !== 'pie' ? {
+                    scales: (chartType === 'pie' || chartType === 'doughnut') ? {} : {
                         y: {
                             beginAtZero: true,
                             grid: { color: '#e5e7eb' }
@@ -125,7 +125,7 @@ export const generateCampaignPDF = async (campaign) => {
                         x: {
                             grid: { color: '#e5e7eb' }
                         }
-                    } : {}
+                    }
                 }
             });
 
@@ -138,9 +138,12 @@ export const generateCampaignPDF = async (campaign) => {
 
     // Progress bar helper
     const addProgressBar = (label, percentage, y, color = colors.primary) => {
-        const barWidth = 120;
+        const labelWidth = 70; // Fixed width for labels
+        const percentageTextWidth = 25; // Space for percentage text
+        const availableWidth = contentWidth - labelWidth - percentageTextWidth;
+        const barWidth = Math.min(availableWidth, 100); // Max 100, but respect page margins
         const barHeight = 8;
-        const x = margin + 80;
+        const x = margin + labelWidth;
 
         // Label
         doc.setTextColor(colors.darkGray);
@@ -167,13 +170,13 @@ export const generateCampaignPDF = async (campaign) => {
     const generateContent = async () => {
         // Header with logo area
         doc.setFillColor(colors.primary);
-        doc.rect(0, 0, pageWidth, 60, 'F');
+        doc.rect(0, 0, pageWidth, 45, 'F');
 
         // Title
         addText('SENTRAC', 32, true, '#FFFFFF', 'center');
         yPosition -= 10;
         addText('Campaign Analytics Report', 16, false, '#FFFFFF', 'center');
-        yPosition = 70;
+        yPosition = 55;
 
         // Campaign name and dates
         addText(campaign.name, 24, true, colors.darkGray, 'center');
@@ -194,6 +197,10 @@ export const generateCampaignPDF = async (campaign) => {
         addMetricCard('Viral Coefficient', `${campaign.viralCoefficient}`, margin + 90, metricsY + 45);
         yPosition = metricsY + 100;
 
+        // Start Sentiment Analysis on a new page for better spacing
+        doc.addPage();
+        yPosition = 20;
+
         // Sentiment Analysis with Chart
         addSectionHeader('SENTIMENT ANALYSIS', colors.success);
 
@@ -210,13 +217,17 @@ export const generateCampaignPDF = async (campaign) => {
 
         try {
             const chartImage = await createChartImage(sentimentChartData, 'doughnut', 250, 150);
-            doc.addImage(chartImage, 'PNG', margin, yPosition, 80, 50);
+            const chartWidth = 80;
+            const chartHeight = 50;
+            const chartX = (pageWidth - chartWidth) / 2; // Center the chart horizontally
+            doc.addImage(chartImage, 'PNG', chartX, yPosition, chartWidth, chartHeight);
+            yPosition += 60; // Move down after the chart
         } catch (error) {
             console.warn('Could not generate chart:', error);
+            yPosition += 20; // Still move down even if chart fails
         }
 
         // Sentiment percentages
-        yPosition += 10;
         addText('Sentiment Breakdown:', 12, true, colors.darkGray);
         yPosition = addProgressBar('Positive', campaign.sentiment.positive, yPosition, colors.success);
         yPosition = addProgressBar('Neutral', campaign.sentiment.neutral, yPosition, colors.gray);
