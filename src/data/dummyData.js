@@ -177,7 +177,7 @@ export const campaignDetails = {
                 shares: 89,
                 views: 45600,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/FFE4E1/FF69B4?text=Summer+Vibes"
+                previewImage: "https://images.unsplash.com/photo-1511376979163-f804dff7ad7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 2,
@@ -190,7 +190,7 @@ export const campaignDetails = {
                 shares: 456,
                 views: 125400,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/E6F3FF/3B82F6?text=TikTok+Video"
+                previewImage: "https://images.unsplash.com/photo-1529720317453-c8da503f2051?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 3,
@@ -203,7 +203,7 @@ export const campaignDetails = {
                 shares: 234,
                 views: 67800,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/FFE4E1/FF6B6B?text=YouTube+Video"
+                previewImage: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 4,
@@ -216,7 +216,7 @@ export const campaignDetails = {
                 shares: 45,
                 views: 23400,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/F0FFF0/32CD32?text=Workout+Post"
+                previewImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 5,
@@ -229,7 +229,7 @@ export const campaignDetails = {
                 shares: 298,
                 views: 89600,
                 sentiment: "neutral",
-                previewImage: "https://via.placeholder.com/300x300/F5F5DC/D2691E?text=Neutral+Content"
+                previewImage: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 6,
@@ -242,7 +242,7 @@ export const campaignDetails = {
                 shares: 23,
                 views: 12800,
                 sentiment: "negative",
-                previewImage: "https://via.placeholder.com/300x300/FFE4E4/DC143C?text=Story+Content"
+                previewImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 7,
@@ -255,7 +255,7 @@ export const campaignDetails = {
                 shares: 189,
                 views: 45300,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/E0E6FF/4169E1?text=Style+Tutorial"
+                previewImage: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 8,
@@ -268,7 +268,7 @@ export const campaignDetails = {
                 shares: 67,
                 views: 18900,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/F0FFFF/4682B4?text=Carousel+Post"
+                previewImage: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             }
         ]
     },
@@ -382,7 +382,7 @@ export const campaignDetails = {
                 shares: 34,
                 views: 23400,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/FFF8DC/FFD700?text=School+Tips"
+                previewImage: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 10,
@@ -395,7 +395,7 @@ export const campaignDetails = {
                 shares: 78,
                 views: 34500,
                 sentiment: "neutral",
-                previewImage: "https://via.placeholder.com/300x300/F0F8FF/4169E1?text=Study+Guide"
+                previewImage: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 11,
@@ -408,7 +408,7 @@ export const campaignDetails = {
                 shares: 156,
                 views: 8900,
                 sentiment: "neutral",
-                previewImage: "https://via.placeholder.com/300x300/E6F3FF/1DA1F2?text=Science+Tweet"
+                previewImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 12,
@@ -421,7 +421,7 @@ export const campaignDetails = {
                 shares: 23,
                 views: 11200,
                 sentiment: "negative",
-                previewImage: "https://via.placeholder.com/300x300/FFE4E4/DC143C?text=Book+Review"
+                previewImage: "https://images.unsplash.com/photo-1485322551133-3a4c27a9d925?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             }
         ]
     },
@@ -522,7 +522,7 @@ export const campaignDetails = {
                 shares: 678,
                 views: 156800,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/FFE4CC/FF8C00?text=Gift+Guide"
+                previewImage: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 14,
@@ -535,7 +535,7 @@ export const campaignDetails = {
                 shares: 123,
                 views: 42300,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/F0FFF0/228B22?text=Holiday+Haul"
+                previewImage: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 15,
@@ -548,7 +548,7 @@ export const campaignDetails = {
                 shares: 234,
                 views: 67800,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/FFE4E6/FF1493?text=Shopping+Tips"
+                previewImage: "https://images.unsplash.com/photo-1512389098783-66b81f86e199?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 16,
@@ -561,7 +561,7 @@ export const campaignDetails = {
                 shares: 89,
                 views: 32100,
                 sentiment: "neutral",
-                previewImage: "https://via.placeholder.com/300x300/F5F5DC/CD853F?text=Christmas+Deals"
+                previewImage: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             }
         ]
     },
@@ -658,7 +658,7 @@ export const campaignDetails = {
                 shares: 156,
                 views: 45600,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/F0FFFF/00CED1?text=Workout+Video"
+                previewImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 18,
@@ -671,7 +671,7 @@ export const campaignDetails = {
                 shares: 67,
                 views: 28900,
                 sentiment: "positive",
-                previewImage: "https://via.placeholder.com/300x300/E6FFE6/32CD32?text=Fitness+Reel"
+                previewImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 19,
@@ -684,7 +684,7 @@ export const campaignDetails = {
                 shares: 234,
                 views: 78900,
                 sentiment: "neutral",
-                previewImage: "https://via.placeholder.com/300x300/FFF8DC/DAA520?text=Challenge+Tips"
+                previewImage: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             },
             {
                 id: 20,
@@ -697,7 +697,7 @@ export const campaignDetails = {
                 shares: 34,
                 views: 16700,
                 sentiment: "negative",
-                previewImage: "https://via.placeholder.com/300x300/FFE4E4/DC143C?text=Motivation+Post"
+                previewImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=400"
             }
         ]
     }
