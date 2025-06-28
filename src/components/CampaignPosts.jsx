@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PostDetailModal from './PostDetailModal';
 
 // Import platform icons (these should match the imports in CampaignReport.jsx)
 import instagramIcon from '../assets/icons/instagram-icon.png';
@@ -59,9 +60,9 @@ const formatNumber = (num) => {
 	return num.toString();
 };
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, onViewPost }) => {
 	const handleViewPost = () => {
-		window.open(post.url, '_blank', 'noopener,noreferrer');
+		onViewPost(post);
 	};
 
 	return (
@@ -149,10 +150,23 @@ const PostCard = ({ post }) => {
 };
 
 const CampaignPosts = ({ posts, selectedPlatforms }) => {
+	const [selectedPost, setSelectedPost] = useState(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
 	const filteredPosts = filterPostsByPlatforms(
 		posts,
 		selectedPlatforms
 	);
+
+	const handleViewPost = (post) => {
+		setSelectedPost(post);
+		setIsModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+		setSelectedPost(null);
+	};
 
 	if (!posts || posts.length === 0) {
 		return (
@@ -191,10 +205,21 @@ const CampaignPosts = ({ posts, selectedPlatforms }) => {
 			) : (
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 					{filteredPosts.map((post) => (
-						<PostCard key={post.id} post={post} />
+						<PostCard
+							key={post.id}
+							post={post}
+							onViewPost={handleViewPost}
+						/>
 					))}
 				</div>
 			)}
+
+			{/* Post Detail Modal */}
+			<PostDetailModal
+				post={selectedPost}
+				isOpen={isModalOpen}
+				onClose={handleCloseModal}
+			/>
 		</div>
 	);
 };
