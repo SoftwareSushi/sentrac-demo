@@ -3,12 +3,34 @@ import {
 	Routes,
 	Route,
 } from 'react-router-dom';
+import { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import CampaignReport from './components/CampaignReport';
 import CampaignCreation from './components/CampaignCreation';
+import Login from './components/Login';
 import './App.css';
 
 function App() {
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+	const handleLogin = () => {
+		setIsAuthenticated(true);
+	};
+
+	const handleLogout = () => {
+		setIsAuthenticated(false);
+	};
+
+	// Show login page if not authenticated
+	if (!isAuthenticated) {
+		return (
+			<Router>
+				<Login onLogin={handleLogin} />
+			</Router>
+		);
+	}
+
+	// Show main app if authenticated
 	return (
 		<Router>
 			<div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50">
@@ -30,6 +52,12 @@ function App() {
 									</div>
 								</div>
 							</div>
+							<button
+								onClick={handleLogout}
+								className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+							>
+								Logout
+							</button>
 						</div>
 					</div>
 				</header>
