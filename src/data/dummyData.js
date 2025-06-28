@@ -704,7 +704,7 @@ export const campaignDetails = {
 };
 
 export const sentimentColors = {
-    positive: "#10B981", // Green
-    neutral: "#6B7280",  // Gray
-    negative: "#EF4444"  // Red
+    positive: "#10B981", // Green (keeping positive as green for clarity)
+    neutral: "#8B5CF6",  // Purple
+    negative: "#EC4899"  // Pink
 }; 

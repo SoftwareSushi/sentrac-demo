@@ -219,12 +219,12 @@ const SentimentPieChart = ({ sentiment }) => {
 		{
 			name: 'Neutral',
 			value: sentiment.neutral,
-			color: '#6b7280',
+			color: '#8b5cf6',
 		},
 		{
 			name: 'Negative',
 			value: sentiment.negative,
-			color: '#ef4444',
+			color: '#ec4899',
 		},
 	];
 
@@ -279,16 +279,16 @@ const SentimentOverTimeChart = ({ data }) => {
 					<Line
 						type="monotone"
 						dataKey="neutral"
-						stroke="#6b7280"
+						stroke="#8b5cf6"
 						strokeWidth={3}
-						dot={{ fill: '#6b7280', strokeWidth: 2, r: 4 }}
+						dot={{ fill: '#8b5cf6', strokeWidth: 2, r: 4 }}
 					/>
 					<Line
 						type="monotone"
 						dataKey="negative"
-						stroke="#ef4444"
+						stroke="#ec4899"
 						strokeWidth={3}
-						dot={{ fill: '#ef4444', strokeWidth: 2, r: 4 }}
+						dot={{ fill: '#ec4899', strokeWidth: 2, r: 4 }}
 					/>
 				</LineChart>
 			</ResponsiveContainer>
@@ -323,12 +323,12 @@ const ContentTypeChart = ({ data }) => {
 					/>
 					<defs>
 						<linearGradient id="purpleGradient" x1="0" y1="0" x2="0" y2="1">
-							<stop offset="5%" stopColor="#a855f7" stopOpacity={0.8} />
-							<stop offset="95%" stopColor="#ec4899" stopOpacity={0.8} />
+							<stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.9} />
+							<stop offset="95%" stopColor="#ec4899" stopOpacity={0.9} />
 						</linearGradient>
 						<linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
-							<stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8} />
-							<stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.8} />
+							<stop offset="5%" stopColor="#a855f7" stopOpacity={0.9} />
+							<stop offset="95%" stopColor="#f472b6" stopOpacity={0.9} />
 						</linearGradient>
 					</defs>
 				</BarChart>
@@ -364,12 +364,12 @@ const PlatformComparisonChart = ({ data }) => {
 					/>
 					<defs>
 						<linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
-							<stop offset="5%" stopColor="#10b981" stopOpacity={0.8} />
-							<stop offset="95%" stopColor="#06b6d4" stopOpacity={0.8} />
+							<stop offset="5%" stopColor="#10b981" stopOpacity={0.9} />
+							<stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.9} />
 						</linearGradient>
 						<linearGradient id="orangeGradient" x1="0" y1="0" x2="0" y2="1">
-							<stop offset="5%" stopColor="#f59e0b" stopOpacity={0.8} />
-							<stop offset="95%" stopColor="#ef4444" stopOpacity={0.8} />
+							<stop offset="5%" stopColor="#a855f7" stopOpacity={0.9} />
+							<stop offset="95%" stopColor="#ec4899" stopOpacity={0.9} />
 						</linearGradient>
 					</defs>
 				</BarChart>
@@ -470,8 +470,8 @@ const HashtagAnalysis = ({ hashtags }) => {
 
 	const getSentimentColor = (sentiment) => {
 		if (sentiment >= 80) return 'text-emerald-600 bg-emerald-50';
-		if (sentiment >= 70) return 'text-yellow-600 bg-yellow-50';
-		return 'text-red-600 bg-red-50';
+		if (sentiment >= 70) return 'text-purple-600 bg-purple-50';
+		return 'text-pink-600 bg-pink-50';
 	};
 
 	return (
@@ -540,11 +540,11 @@ const WordCloud = ({ words }) => {
 					<span className="text-gray-600 font-medium">Positive</span>
 				</div>
 				<div className="flex items-center space-x-2">
-					<div className="w-4 h-4 bg-gray-500 rounded-full shadow-sm"></div>
+					<div className="w-4 h-4 bg-purple-500 rounded-full shadow-sm"></div>
 					<span className="text-gray-600 font-medium">Neutral</span>
 				</div>
 				<div className="flex items-center space-x-2">
-					<div className="w-4 h-4 bg-red-500 rounded-full shadow-sm"></div>
+					<div className="w-4 h-4 bg-pink-500 rounded-full shadow-sm"></div>
 					<span className="text-gray-600 font-medium">Negative</span>
 				</div>
 			</div>
