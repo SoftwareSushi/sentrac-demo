@@ -40,14 +40,14 @@ function App() {
 							<div className="flex items-center">
 								<div className="flex items-center space-x-3">
 									<div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-										<span className="text-white font-bold text-lg">S</span>
+										<span className="text-white font-bold text-lg">ST</span>
 									</div>
 									<div>
 										<h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-											SenTrac
+											SocialTrack
 										</h1>
 										<span className="text-sm text-gray-500 font-medium">
-											Sentiment Analytics Platform
+											Social Media Analytics Platform
 										</span>
 									</div>
 								</div>

@@ -1,4 +1,4 @@
-// Dummy data for SenTrac demo
+// Dummy data for SocialTrack demo
 
 export const campaigns = [
     {

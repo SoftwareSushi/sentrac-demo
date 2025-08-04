@@ -33,13 +33,13 @@ const Login = ({ onLogin }) => {
 					{/* Logo Section */}
 					<div className="text-center mb-8">
 						<div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-							<span className="text-white font-bold text-2xl">S</span>
+							<span className="text-white font-bold text-2xl">ST</span>
 						</div>
 						<h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-							Welcome to SenTrac
+							Welcome to SocialTrack
 						</h1>
 						<p className="text-gray-600 font-medium">
-							Sentiment Analytics Platform
+							Social Media Analytics Platform
 						</p>
 					</div>
 
@@ -67,7 +67,7 @@ const Login = ({ onLogin }) => {
 										Login Successful!
 									</h3>
 									<p className="text-sm text-emerald-700">
-										Welcome to SenTrac Dashboard
+										Welcome to SocialTrack Dashboard
 									</p>
 								</div>
 							</div>
@@ -219,7 +219,7 @@ const Login = ({ onLogin }) => {
 				{/* Footer */}
 				<div className="text-center mt-6">
 					<p className="text-sm text-gray-400 font-medium">
-						© 2024 SenTrac. Demo Version.
+						© 2024 SocialTrack. Demo Version.
 					</p>
 				</div>
 			</div>

@@ -1,16 +1,16 @@
-# SenTrac - Sentiment Analytics Platform
+# SocialTrack - Social Media Analytics Platform
 
 ## 🚀 Overview
 
-**SenTrac** is a comprehensive social media sentiment analytics platform demo that showcases advanced data visualization, campaign management, and sentiment analysis capabilities. This React-based application demonstrates how modern web technologies can be used to create sophisticated analytics dashboards for social media marketing campaigns.
+**SocialTrack** is a comprehensive social media analytics platform demo that showcases advanced data visualization, campaign management, and sentiment analysis capabilities. This React-based application demonstrates how modern web technologies can be used to create sophisticated analytics dashboards for social media marketing campaigns.
 
-![SenTrac Platform](https://img.shields.io/badge/Platform-React-61DAFB?style=for-the-badge&logo=react)
+![SocialTrack Platform](https://img.shields.io/badge/Platform-React-61DAFB?style=for-the-badge&logo=react)
 ![Analytics](https://img.shields.io/badge/Analytics-Sentiment%20Analysis-8B5CF6?style=for-the-badge)
 ![Charts](https://img.shields.io/badge/Charts-Recharts-FF6B6B?style=for-the-badge)
 
 ## 📊 What This Demo Demonstrates
 
-SenTrac is a full-featured social media campaign analytics platform that showcases:
+SocialTrack is a full-featured social media campaign analytics platform that showcases:
 
 ### 🎯 Core Business Features
 
@@ -111,7 +111,7 @@ SenTrac is a full-featured social media campaign analytics platform that showcas
 
    ```bash
    git clone <repository-url>
-   cd sentrac
+   cd socialtrack
    ```
 
 2. **Install dependencies**
@@ -226,4 +226,4 @@ This demo is perfect for showcasing:
 
 **Built using React, TailwindCSS, and modern web technologies**
 
-_SenTrac demonstrates the power of modern web development for creating sophisticated analytics platforms that can handle complex data visualization and user interaction requirements._
+_SocialTrack demonstrates the power of modern web development for creating sophisticated analytics platforms that can handle complex data visualization and user interaction requirements._
